@@ -50,6 +50,7 @@ namespace Mastodon_usernum
             // Wookbookを生成
             var wbook = new XLWorkbook(XlsxWrite.XLSXFILENAME);
 
+            // JSONのデータをxlsxファイルに記入
             jsondata.ToList()
                     .ForEach(jsonpair =>
                     {
