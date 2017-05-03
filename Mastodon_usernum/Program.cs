@@ -16,7 +16,7 @@ namespace Mastodon_usernum
         /// <summary>
         /// Mastodonのインスタンス名の文字列が格納された配列
         /// </summary>
-        private static readonly String[] INSTANCES = new String[] { "pawoo.net", "mstdn.jp", "mastodon.social", "mastodon.cloud", "horiedon.com" };
+        private static readonly String[] INSTANCES = new String[] { "mstdn.jp", "pawoo.net", "mastodon.cloud", "friends.nico" };
 
         /// <summary>
         /// エントリポイント

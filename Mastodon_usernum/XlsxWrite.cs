@@ -9,7 +9,8 @@ namespace Mastodon_usernum
     using System.Collections.Generic;
     using System.Linq;
     using ClosedXML.Excel;
-    
+    using System.IO;
+
     internal sealed class XlsxWrite
     {
         #region フィールド
@@ -17,7 +18,12 @@ namespace Mastodon_usernum
         /// <summary>
         /// xlsxファイルのファイル名
         /// </summary>
-        private static readonly String XLSXFILENAME = "Mastodonの各インスタンスにおけるユーザー数の推移.xlsx";
+        private static readonly String EMPTYXLSXFILENAME = "Mastodonの各インスタンスにおけるユーザー数の推移_空.xlsx";
+
+        /// <summary>
+        /// xlsxファイルのファイル名
+        /// </summary>
+        private static readonly String XLSXFILENAME = "Mastodonの各インスタンスにおけるユーザー数の推移_" + DateTime.Now.ToString("yyMMdd") + ".xlsx";
 
         /// <summary>
         /// インスタンス名をキー、Mastodonのデータを値としたDictionary
@@ -47,6 +53,9 @@ namespace Mastodon_usernum
         /// </summary>
         internal void WriteXlsx()
         {
+            // xlsxファイルを生成
+            File.Copy(XlsxWrite.EMPTYXLSXFILENAME, XlsxWrite.XLSXFILENAME, true);
+
             // Wookbookを生成
             var wbook = new XLWorkbook(XlsxWrite.XLSXFILENAME);
 

@@ -78,6 +78,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy ..\..\Mastodonの各インスタンスにおけるユーザー数の推移.xlsx</PostBuildEvent>
+    <PostBuildEvent>copy ..\..\Mastodonの各インスタンスにおけるユーザー数の推移_空.xlsx .</PostBuildEvent>
   </PropertyGroup>
 </Project>
